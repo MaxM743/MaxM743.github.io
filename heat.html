@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script id="MathJax-script" async src="js/tex-mml-svg.js"></script>
+    <script src='css/fonts/loadfont.js'></script>
+    <script src='js/p5.min.js'></script>
+
+    <script>
+        function buttonClicked(page) {
+            window.location.href = page;
+        }
+    </script>
+
+
+    <title>Heat Numerical Solution</title>
+
+</head>
+
+<body>
+
+
+    <header>
+        <div>&nbsp;</div>
+        <nav>
+            <ul class="navbar">
+                <div class="navbar-button" id="" onclick="buttonClicked('index.html')">Main</div>
+                <div class="navbar-button" id="" onclick="buttonClicked('projects.html')">Projects</div>
+            </ul>
+        </nav>
+        <div class="navbar-button" id="" lang="en">Fr</div>
+    </header>
+
+
+
+    <main>
+        <div class="project-description">
+        
+            <h1>Heat equation</h1>
+
+            <h2>I/ Formal definition</h2>
+            
+            <p>The two-dimensional heat equation is defined as :</p>
+
+            <p>
+                <br>
+                $$\dfrac{\partial T}{\partial t}=D\left[\dfrac{\partial^2T}{\partial x^2}+\dfrac{\partial^2T}{\partial y^2}\right]$$
+                <br>
+            </p>
+
+            <p>
+                where $D$ is the thermal diffusivity and depends on the material's properties.
+            </p>
+            <p>
+                This equation describes how heat flows through a wall by diffusion, at a given point $(x, y)$.
+            </p>
+
+            <h2>II/ Finite Difference</h2>
+
+            <p>
+                First, we discretize the domain into a $N\times M$ grid of points. Hence we can rewrite the heat equation:
+                
+              
+                $$\dfrac{\partial T_{n,m}^{t}}{\partial t}=D\left[\dfrac{\partial^2T_{n,m}^{t}}{\partial x^2}+\dfrac{\partial^2T_{n,m}^{t}}{\partial y^2}\right]$$
+
+                
+                approximate the derivatives using the following approximation : 
+      
+            </p>
+
+            <p>
+                <br>
+                $$T_{n,m}^{t+1}=T_{n, m}^t + \alpha \left[T_{n, m-1}^t+T_{n, m+1}^t-2T_{n, m}^t\right]+\beta \left[T_{n-1,m}^t+T_{n+1, m}^t-2T_{n, m}^t\right]$$
+                <br>
+            </p>
+
+            <p>
+                where :
+            </p>
+
+            <p>
+                <br>
+                $$\alpha=D\dfrac{\Delta t}{\Delta x^2} \text{ et } \beta=D\dfrac{\Delta t}{\Delta y^2}$$
+                <br>
+            </p>
+
+            <h2>III/ Boundaries conditions</h2>
+
+            <h2>IV/ Simulations</h2>
+
+            <p>To control the animation you can use :</p>
+
+            <ul>
+                <li>Press "A", "Z" or "E" + MouseWheel : Rotate around the axes</li>
+                <li>MouseWheel : Zoom in and out</li>
+                <li>Left click : Move into the scene</li>
+            </ul>
+    </div>
+
+    <div class="p5-container">
+        <script src="js/heat/matrix.js"></script>
+        <script src="js/heat/scene.js"></script>
+        <script src="js/heat/camera.js"></script>
+        <script src="js/heat/heat.js"></script>
+        <script src="js/heat/widgets.js"></script>
+
+
+        <div id="p5-sketch">
+            <script src="js/heat/sketch.js"></script>
+        </div>
+        <div id='p5-widgets'></div>
+    
+    </div>
+
+
+
+
+
+    </main>
+
+
+    <footer>
+        <p>&copy; 2023. No rights reserved.</p>
+    </footer>
+</body>
+
+</html>

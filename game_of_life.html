@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css"> 
+    <script id="MathJax-script" async src="js/tex-mml-svg.js"></script>
+    <script src='css/fonts/loadfont.js'></script>
+    <script src='js/p5.min.js'></script>
+
+    
+    <script>
+        function buttonClicked(page) {
+            window.location.href = page;
+        }
+        </script>
+
+    <title>Game Of Life</title>
+
+</head>
+<body>
+
+    <header>
+        <div>&nbsp;</div>
+        <nav>
+            <ul class="navbar">
+                <div class="navbar-button" id="" onclick="buttonClicked('index.html')">Main</div>
+                <div class="navbar-button" id="" onclick="buttonClicked('projects.html')">Projects</div>
+            </ul>
+        </nav>
+        <div class="navbar-button" id="" lang="en">Fr</div>
+    </header>
+
+
+
+    
+    <main>
+        
+        <div class="project-description">
+            <h1>Conway's Game Of Life</h1>
+
+        </div>
+        
+   
+        <div class="p5-container">
+            <script src='js/game_of_life/board.js'></script>
+            <script src='js/game_of_life/widgets.js'></script>
+            <div id="p5-sketch"><script src="js/game_of_life/GoL.js"></script></div> 
+            <div id='p5-widgets'></div>
+        </div>
+
+        
+    </main> 
+
+
+    <footer>
+        <p>&copy; 2023. No rights reserved.</p>
+    </footer>
+</body>
+</html>
