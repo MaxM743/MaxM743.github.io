@@ -28,7 +28,7 @@
         <div></div>
         <nav>
             <ul class="navbar">
-                <div class="navbar-button" id="" onclick="buttonClicked('index.html')">Main</div>
+                <div class="navbar-button" id="" onclick="buttonClicked('index.html')">Home</div>
                 <div class="navbar-button" id="" onclick="buttonClicked('projects.html')">Projects</div>
             </ul>
         </nav>
@@ -92,8 +92,10 @@
 
             <h2>IV/ Simulations</h2>
 
-            <p>To control the animation you can use :</p>
 
+            <hr/>
+            <p>To control the animation you can use :</p>
+            
             <ul>
                 <li>Press "A", "Z" or "E" + MouseWheel : Rotate around the axes</li>
                 <li>MouseWheel : Zoom in and out</li>
@@ -122,10 +124,13 @@
 
     </main>
 
-
     <footer>
-        <p>&copy; 2023. No rights reserved.</p>
+        <div id="footer">
+        <span id="defaultText">&copy;2023. No rights reserved. </span>
+        <span id="hoverText" style="display: none;">&#x1F382; The cake is a lie.</span>
+    </div>
     </footer>
+    <script src="js/triangle_mesh/portal.js"></script>
 </body>
 
 </html>

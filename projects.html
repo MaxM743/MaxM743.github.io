@@ -26,7 +26,7 @@
             <div></div>
             <nav>
                 <ul class="navbar">
-                    <div class="navbar-button" id="" onclick="buttonClicked('index.html')">Main</div>
+                    <div class="navbar-button" id="" onclick="buttonClicked('index.html')">Home</div>
                     <div class="navbar-button" id="" onclick="buttonClicked('projects.html')">Projects</div>
                 </ul>
             </nav>
@@ -39,32 +39,41 @@
     <main>
         <ul class="projects-menu">
             <div class="projects-menu-select" onclick="buttonClicked('heat.html')">
-                <h1 class="projects-menu-title">HEAT</h1>
-                <img class="projects-menu-image" src="images/projects/heat-bg.jpg" alt="Heat" width="50%" height="30%">
+                <h1>Heat</h1>
+                <img class="projects-menu-image" src="images/projects/heat-bg.jpg" alt="Heat">
             </div>
-
+           
             <div class="projects-menu-select" onclick="buttonClicked('mandelbrot.html')">
-                <img class="projects-menu-image" src="images/projects/mandelbrot-bg.jpg" alt="Mandelbrot" width="50%" height="30%">
+                <h1>Mandelbrot</h1>
+                <img class="projects-menu-image" src="images/projects/mandelbrot-bg.jpg" alt="Mandelbrot">
+                
             </div>
-
+           
             <div class="projects-menu-select" onclick="buttonClicked('julia.html')">
-                <img class="projects-menu-image" src="julia.jpg" alt="Julia" width="50%" height="30%">
+                <h1>Julia</h1>
+                <img class="projects-menu-image" src="julia.jpg" alt="Julia">
             </div>
-
+            
             <div class="projects-menu-select" onclick="buttonClicked('fractals.html')">
-               
+                <h1>Misc. Fractals</h1>
                 <img class="projects-menu-image" src="misc_fractals.png" alt="Misc. Fractals" width="50%" height="30%">
+                
             </div>
-
+           
             <div class="projects-menu-select" onclick="buttonClicked('game_of_life.html')">
+                <h1>Game Of Life</h1>
                 <img class="projects-menu-image" src="images/projects/gol-bg.jpg" alt="Game Of Life" width="50%" height="30%">
             </div>
         </ul>
     </main>
 
     <footer>
-        <p>&copy; 2023. No rights reserved.</p>
+        <div id="footer">
+        <span id="defaultText">&copy;2023. No rights reserved. </span>
+        <span id="hoverText" style="display: none;">&#x1F382; The cake is a lie.</span>
+    </div>
     </footer>
+    <script src="js/triangle_mesh/portal.js"></script>
 </body>
 
 </html>

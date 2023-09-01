@@ -25,7 +25,7 @@
         <div></div>
         <nav>
             <ul class="navbar">
-                <div class="navbar-button" id="" onclick="buttonClicked('index.html')">Main</div>
+                <div class="navbar-button" id="" onclick="buttonClicked('index.html')">Home</div>
                 <div class="navbar-button" id="" onclick="buttonClicked('projects.html')">Projects</div>
             </ul>
         </nav>
@@ -34,20 +34,22 @@
 
 
 
-
     <main>
         
         <div class="project-description">
             <h1>Zoom in the Mandelbrot set</h1>
             
-            <h3>To control the animation you can :</h3>
-            <ul>
-                <li>Scroll the mouse to zoom</li>
-                <li>Change the number of iterations</li>
-                <li>Go back to the previous zoom level</li>
-            </ul>
-        </div>
 
+
+        <hr/>
+
+        <h3>To control the animation you can :</h3>
+        <ul>
+            <li>Scroll the mouse to zoom</li>
+            <li>Change the number of iterations</li>
+            <li>Go back to the previous zoom level</li>
+        </ul>
+    </div>
         <div class="p5-container">
             <script src="js/mandelbrot/complex.js"></script>
             <script src="js/mandelbrot/zoom.js"></script>
@@ -62,8 +64,11 @@
 
 
     <footer>
-        <p id="footer-text">&copy; 2023. No rights reserved.</p>
+        <div id="footer">
+        <span id="defaultText">&copy;2023. No rights reserved. </span>
+        <span id="hoverText" style="display: none;">&#x1F382; The cake is a lie.</span>
+    </div>
     </footer>
-
+    <script src="js/triangle_mesh/portal.js"></script>
 </body>
 </html>
