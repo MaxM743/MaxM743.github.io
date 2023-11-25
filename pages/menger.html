@@ -1,0 +1,102 @@
+<!DOCTYPE hmml>
+<html>
+  <head>
+    <title>Home</title>
+    <link href="../style/style.css" rel="stylesheet" />
+    <link href="../style/prism.css" rel="stylesheet" />
+    <script src="../scripts/p5.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" src="../scripts/mathjax.js"></script>
+  </head>
+
+  <header>
+    <button class="header-button" onclick='window.location.href="../index.html"'>HOME</button>
+    <button class="header-button" onclick='window.location.href="../pages/projects.html"'>PROJECTS</button>
+  </header>
+  
+  <body>
+    <div id="project-description">
+      <h1>Menger Sponge</h1>
+      <p>The Menger Sponge is the generalization in 3D of the Sierpinski Carpet (c.f. first applet). Its construction can be made using the following algorithm:
+      <ol>
+        <li>1. Start with a cube</li>
+        <li>2. Divide the cube into 27 smaller cubes</li>
+        <li>3. Remove the cube in the middle and the ones in the center of each face</li>
+        <li>4. Repeat the process for each of the remaining cubes</li>
+      </p>    
+      <h1>Code example in 2D (p5.js)</h1>
+      <script src="../scripts/prism.js"></script>
+      <pre>
+        <code class="language-javascript">
+let maximum = 2;
+
+
+function setup() {
+  createCanvas(600, 600);
+  noLoop();
+  strokeWeight(0.2);
+  stroke('black')
+}
+
+function draw() {
+  background("black")
+  sponge(0, 0, width, 1)
+}
+
+function sponge(x, y, length, level){
+  if  (level == maximum){
+    push()
+    fill('blue')
+    square(x, y, length);
+    pop()
+  }else{
+    sponge(x, y, length/3, level + 1);
+    sponge(x + length/3, y, length/3, level + 1)
+    sponge(x, y + length/3, length/3, level + 1)
+    sponge(x + 2*length/3, y, length/3, level + 1)
+    sponge(x, y + 2*length/3, length/3, level + 1)
+    sponge(x + 2*length/3, y + 2*length/3, length/3, level + 1)
+    sponge(x + 2*length/3, y + length/3, length/3, level + 1)
+    sponge(x + length/3, y + 2*length/3, length/3, level + 1)
+  }
+}
+
+function mouseClicked(){
+  if (maximum < 6){
+    maximum++;
+    draw()
+  }
+}
+        </code>
+     </pre>
+     <p>You can run this script by going to p5 editor using this link:</p>
+      <a href="https://editor.p5js.org/MaxM74/sketches/iGxOrJCoI">https://editor.p5js.org/MaxM74/sketches/iGxOrJCoI</a>
+    </div>
+
+
+      <div id="project-container-sponge">
+        <h1>2D Menger Sponge</h1>
+        <canvas id="fractals-sponge2D" width="400" height="400"></canvas>
+        <h1>3D Menger Sponge</h1>
+        <div id="fractals-sponge3D"></div>
+        <div id="fractals-sponge3D-widgets"></div>
+        <div id="fractals-sponge3D-description">        
+          <p>To control the camera you can:</p>
+          <ul>
+          <li>Scroll up and down -- zoom in and out</li>
+          <li>"A", "Z" and "E" + Scroll -- rotate around the $x$, $y$ and $z$ axis</li>
+          <li>Right click + Drag -- move around the scene</li>
+        </div>
+        
+
+      </div> 
+
+      <script src="../scripts/projects/misc_fractals/sponge2D.js"></script>    
+      <script src="../scripts/projects/misc_fractals/sponge3D.js"></script>
+
+
+
+  </body>
+
+</html>

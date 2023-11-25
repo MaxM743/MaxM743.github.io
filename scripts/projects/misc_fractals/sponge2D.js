@@ -1,38 +1,38 @@
 let maximum = 2;
+let mouseOverCanvas = false;
+let canvas = document.getElementById("fractals-sponge2D");
+let ctx = canvas.getContext("2d");
+ctx.strokeStyle = "white";
 
-function setup() {
-  let can = createCanvas(windowWidth*0.4, windowWidth*0.4);
-  can.parent('fractals-sponge2D');
-  noLoop();
-  stroke('white') 
+function sponge2D(x, y, length, level) {
+    if (level === maximum) {
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(x, y, length, length);
+    } else {
+        const newLength = length / 3;
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                if (!(i === 1 && j === 1)) {
+                    sponge2D(x + i * newLength, y + j * newLength, newLength, level + 1);
+                }
+            }
+        }
+    }
 }
-function draw() {
-  background("black")
-  sponge2D(0, 0, width, 1)
-}
+canvas.addEventListener("mouseenter", function() {
+  mouseOverCanvas = true;
+});
 
-function sponge2D(x, y, length, level){
-  if  (level == maximum){
-    strokeWeight(0)
-    push()
-    fill('red')
-    square(x, y, length);
-    pop()
-  }else{
-    sponge2D(x, y, length/3, level + 1);
-    sponge2D(x + length/3, y, length/3, level + 1)
-    sponge2D(x, y + length/3, length/3, level + 1)
-    sponge2D(x + 2*length/3, y, length/3, level + 1)
-    sponge2D(x, y + 2*length/3, length/3, level + 1)
-    sponge2D(x + 2*length/3, y + 2*length/3, length/3, level + 1)
-    sponge2D(x + 2*length/3, y + length/3, length/3, level + 1)
-    sponge2D(x + length/3, y + 2*length/3, length/3, level + 1)
-  }
-}
+canvas.addEventListener("mouseleave", function() {
+  mouseOverCanvas = false;
+});
 
-function mouseClicked(){
-  if (maximum < 6){
-    maximum++;
-    draw()
-  }
-}
+document.addEventListener("click", function() {
+    if (mouseOverCanvas && maximum < 6) {
+        maximum++;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        sponge2D(0, 0, canvas.height, 1); // Replace the canvas element
+    }
+});
+
+sponge2D(0, 0, canvas.height, 1);

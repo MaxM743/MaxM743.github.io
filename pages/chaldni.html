@@ -4,6 +4,9 @@
     <title>Home</title>
     <link rel="stylesheet" href="../style/style.css" />
     <script src="../scripts/p5.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" src="../scripts/mathjax.js"></script>
   </head>
 
   <header>
@@ -12,12 +15,35 @@
   </header>
   
   <body>
+    <div id="project-description">
+      <h1>Chladni Plate</h1>
+      <h2>Mathematics</h2>
+      <p>Considering a square plate of dimension $a\times b$ constrained at the center forced to vibrate with a speaker producing a soung at a given frequency. A thin powder or sand is dispatched on its surface. 
+        Recalling the wave equation in two dimensions:
+        $$c^2\nabla^2u=\dfrac{\partial^2}{\partial t^2}u$$
+
+        Using boundary conditions $u(\pm \frac{a}{2}, y)=u(x, \pm \frac{b}{2})=0$ coming from the fact that the sand cannot move at the edges of the plate, we can show that the zeros of the standing wave are of the form:
+        $$u_{mn}(x, y)=\sin\left(\dfrac{m\pi x}{a}\right)\sin\left(\dfrac{n\pi y}{b}\right) - \sin\left(\dfrac{n\pi x}{a}\right)\sin\left(\dfrac{m\pi y}{b}\right)$$
+        where $m, n$ are integers.
+      </p>  
+    </div>
+
+
+
     <div id="chaldni"></div>
     <div id="chaldni-widgets"></div>
     <script src="../scripts/projects/chaldni.js"></script>    
 
 
-
+    <div id="references">
+      <h2>References</h2>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Chladni_plate">Chladni Plate</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Chladni_figures">Chladni Figures</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Wave_equation">Wave Equation</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Standing_wave">Standing Wave</a></li>
+      </ul>
+    </div>
 
   </body>
 
