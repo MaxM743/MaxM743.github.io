@@ -1,0 +1,82 @@
+<!DOCTYPE hmml>
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" href="../style/style.css" />
+    <link href="../style/prism.css" rel="stylesheet" />
+    <script src="../scripts/p5.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</script>
+
+  </head>
+
+  <header>
+    <button class="header-button" onclick='window.location.href="../index.html"'>HOME</button>
+    <button class="header-button" onclick='window.location.href="../pages/projects.html"'>PROJECTS</button>
+  </header>
+  
+  <body>
+
+    <div id="project-description">
+      <h1>Mandelbrot Set</h1>
+      <h2>History</h2>
+      <p>The Mandelbrot set is a famous and visually captivating mathematical set that arises from the iteration of a simple mathematical formula. It was named after its discoverer, Benoit B. Mandelbrot, who was a mathematician and pioneer in the field of fractal geometry. The Mandelbrot set is not only a fascinating mathematical object but also a prime example of a fractal, which is a complex geometric shape that exhibits self-similarity at different scales.</p>
+      <h2>Mathematical Definition</h2>
+      <p>The mandelbrot set is define in the complex plane \(\mathbb{C}\) as the set of complex numbers \(c\) for which the following sequence converge:</p> 
+      
+      \(
+      \left\{
+      \begin{align}
+      z_{n+1}&=z_{n}^2+c\\
+      z_{0}&=0
+      \end{align}
+      \right.
+      \)
+      The mandelbrot set is basically confined to the region \([-2, 1]\times [-1.5, 1.5]\subset\mathbb{C}^2\). To construct the mandelbrot set, we iterate through the previous intervals and by computing the sequence for each points we decide either it converges or not after a certain number of iterations. If the sequence diverges, we color the point in the complex plane according to the number of iterations it took to diverge.
+      <h1>Code example (Python)</h1>
+      <script src="../scripts/prism.js"></script>
+      <pre>
+        <code class="language-python">
+import numpy as np
+import matplotlib.pyplot as plt
+
+max_iter = 50
+resolution = 1024
+
+def mandelbrot(c):
+    z = np.zeros(c.shape, complex)
+    iterations = np.zeros(c.shape, dtype=int)
+    for i in range(max_iter):
+        z = z**2 + c
+        diverge = abs(z) > 2
+        iterations[diverge & (iterations == 0)] = i
+    return iterations
+
+x_c = np.linspace(-2, 1, resolution)
+y_c = np.linspace(-1.5, 1.5, resolution)
+x_c, y_c = np.meshgrid(x_c, y_c)
+
+c = x_c + y_c * 1j
+
+grid = mandelbrot(c)
+
+plt.imshow(grid, cmap="Blues_r")
+plt.show()
+        </code>
+     </pre>
+      
+    </div>
+
+    <div id="mandelbrot-container">
+      <div id="mandelbrot"></div>
+      <div id="mandelbrot-widgets"></div>
+    </div>
+    <script src="../scripts/projects/mandelbrot.js"></script>    
+
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,256 @@
+@font-face {
+  font-family: "Computer Modern"; /* Name your font */
+  src: url("cmunobx.ttf") format("truetype");
+}
+
+html {
+  display: flex;
+  justify-content: center;
+  font-family: "Computer Modern", sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures footer stays at the bottom of the viewport */
+  background-color: #000000;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000000c5; /* Change to your desired background color */
+  color: #000000; /* Change to your desired text color */
+  text-align: center;
+  padding: 10px 0;
+  z-index: 1;
+}
+
+.header-button {
+  width: 20vh;
+  height: 8vh;
+  background-color: #00000000;
+  border-radius: 8px;
+  border: solid 0.1px #ffffff00;
+  color: #ffffff;
+  font-size: 1.4vw;
+  font-weight: bold;
+  transition: all 0.2s ease-in 0s;
+  padding: 10px;
+  margin: 10px;
+  font-family: "Computer Modern", sans-serif;
+  text-align: center;
+  line-height: 0px;
+}
+
+.header-button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+
+}
+main {
+  flex: 1; /* Takes up remaining vertical space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+footer {
+  background-color: #000000c5; /* Change to your desired background color */
+  color: #fff; /* Change to your desired text color */
+  text-align: center;
+  padding: 5px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  font-size: 1vw;
+}
+
+.footer-image {
+  height: 1.4vw;
+  width: 1.4vw;
+}
+
+
+.projects-scroll {
+  position: absolute;
+  top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  margin: 3vh;
+}
+
+.projects-item {
+  display: grid;
+  grid-template-columns: 10fr 10fr;
+  grid-template-rows: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+  height: 50vh;
+  transition: all 0.4s ease-in-out 0s;
+  font-family: "Computer Modern", sans-serif;
+  border: none;
+  background-color: rgba(2, 2, 2, 0.734);
+  margin: 5vh;
+}
+
+.projects-item:hover {
+  background-color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.projects-text {
+  background-color: rgb(0, 0, 0);
+  margin: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 1vw;
+}
+
+#project-description{
+  width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+  color: white;
+  background-color: rgb(0, 0, 0);
+}
+
+#project {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+#project-container-sponge{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+#fractals-sponge2D {
+  
+  padding: 100px;
+  background-color: rgb(227, 103, 90);
+  height: 50vh;
+}
+
+#fractals-sponge3D {
+  padding: 100px;
+  background-color: red;
+  height: 50vh;
+}
+  
+#chaldni {
+  display: flex;
+  justify-content: center;
+  margin-top: 20vh;
+  height: 60vh;
+}
+
+#chaldni-widgets{
+  margin: 10vh;
+  background-color: rgb(227, 222, 90);
+  border-radius: 30px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#game-of-life-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-of-life{
+  margin-top: 20vh;
+}
+
+#game-of-life-widgets{
+  margin: 2vh;
+  width: 10vw;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+}
+
+#mandelbrot-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mandelbrot{
+  margin-top: 20vh;
+  
+  height: 60vh;
+}
+
+#mandelbrot-widgets{
+  margin: 2vh;
+  width: 10vw;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#item-text {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+
+#main-animation {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+ul {
+  list-style-type: disc; /* Filled circle */
+}
